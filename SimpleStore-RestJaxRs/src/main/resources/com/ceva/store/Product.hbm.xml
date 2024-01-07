@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.ceva.store">
+    <class name="Product" table="PRODUCT">
+        <id column="ID_PRODUCT" name="id_product">
+            <generator class="identity"/>
+        </id>
+        <property name="name" column="NAME" type="string"/>
+        <property name="price" column="PRICE" type="double"/>
+        <property name="description" column="DESCRIPTION" type="string"/>
+    </class>
+</hibernate-mapping>
