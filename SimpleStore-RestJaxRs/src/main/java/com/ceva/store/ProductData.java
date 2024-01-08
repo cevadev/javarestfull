@@ -4,6 +4,8 @@
  */
 package com.ceva.store;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -13,11 +15,16 @@ import java.util.Map;
 public class ProductData {
     public int id_product = -1;
     public String name;
+    // indicamos que se ignora a getPrice como propiedad pero double price sera la propiedad
+    @JsonProperty
     public double price;
     public String description;
+    @JsonIgnore
     public Map<String,String> errors;
     
+    @JsonIgnore
     public String getPrimaryKey() {
+        // retornamos vacio cuando id_product es -1
         return id_product != -1 ? String.valueOf(id_product) : "";
     }
     
@@ -25,6 +32,8 @@ public class ProductData {
         return name != null ? name : "";
     }
     
+    // indicamos que no tome a getPrice() como una propiedad del objeto
+    @JsonIgnore
     public String getPrice() {
         return String.format(Locale.US, "%.2f", price);
     }
@@ -33,6 +42,7 @@ public class ProductData {
         return description != null ? description : "";
     }
     
+    // mensajes de error en el formulario de captura de datos del product
     public void setError(String name, String message) {
         if (errors == null)
             errors = new HashMap<>();

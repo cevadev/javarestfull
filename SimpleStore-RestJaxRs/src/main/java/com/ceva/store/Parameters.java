@@ -5,7 +5,7 @@
 package com.ceva.store;
 
 /**
- * Interface que encapsula la info de request
+ * Interface que encapsula los RequestParameters
  */
 public interface Parameters {
     public String getString(String name);

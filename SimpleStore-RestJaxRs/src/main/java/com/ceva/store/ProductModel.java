@@ -134,6 +134,34 @@ public class ProductModel {
         }
     }
     
+    public boolean save(ProductData data) {
+        try (Session session = HibernateUtil.newSession()) {
+            Transaction tx = session.beginTransaction();
+            
+            Product product;
+            if (data.id_product != -1)
+                product = session.get(Product.class, data.id_product);
+            else
+                product = new Product();
+            product.setName(data.name);
+            product.setPrice(data.price);
+            product.setDescription(data.description);
+            session.save(product);
+            
+            // obtenemos el id generado por la BD al insertar un producto
+            if (data.id_product == -1) // significa q se inserto el product
+                data.id_product = product.getId_product();
+            
+            tx.commit();
+        } catch (HibernateException e) {
+            System.out.println(e.getClass().getName() + " generated: " + e.getMessage());
+            e.printStackTrace();
+            
+            return false;
+        }
+        return true;
+    }
+    
     public boolean delete(int id_product) {
         try (Session session = HibernateUtil.newSession()) {
             Transaction tx = session.beginTransaction();
