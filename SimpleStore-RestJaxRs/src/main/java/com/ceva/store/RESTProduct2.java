@@ -138,7 +138,14 @@ public class RESTProduct2 {
         }
     }
     
-/*    
+    /**
+     * 
+     * @param formParams -> Mapa que contiene los valores que estan en el form que vienen del post
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException 
+     */
     @POST
     @Produces("text/html")
     public void saveProduct(MultivaluedMap<String, String> formParams,
@@ -150,7 +157,6 @@ public class RESTProduct2 {
             response.sendRedirect(request.getContextPath() + "/rest/product");
         }
     }
-    
     @POST
     @Path("{id_product}")
     @Produces("text/html")
@@ -165,5 +171,4 @@ public class RESTProduct2 {
             response.sendRedirect(request.getContextPath() + "/rest/product");
         }
     }
-*/
 }

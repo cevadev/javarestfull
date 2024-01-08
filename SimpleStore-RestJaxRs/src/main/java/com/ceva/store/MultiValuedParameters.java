@@ -8,11 +8,9 @@ import java.util.List;
 import jakarta.ws.rs.core.MultivaluedMap; 
 /**
  *
- * @author Test
+ * Clase que lee a partir de formParams un string
  */
 
-public class MultiValuedParameters{}
-/*
 public class MultiValuedParameters extends Parameters {
     MultivaluedMap<String,String> formParams;
 
@@ -33,4 +31,3 @@ public class MultiValuedParameters extends Parameters {
     }
     
 }
-*/

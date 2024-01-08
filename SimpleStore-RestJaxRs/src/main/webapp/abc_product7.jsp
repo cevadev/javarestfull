@@ -13,14 +13,14 @@
          soporta GET y POST  
          si product no tiene id es un dato nuevo
          si product posee id es una actualizacion-->
-    <form method="post" action="<c:url value="/product/${data.primaryKey}"/>">
+    <form method="post" action="<c:url value="/rest/product/${data.primaryKey}"/>">
     <input type="hidden" name="id_product" value="${data.primaryKey}">
     Nombre: <input type="text" name="name" value="${data.name}"> ${data.getError("name")} <br>
     Descripci&oacute;n: <input type="text" name="description" value="${data.description}"> ${data.getError("description")}<br>
     Precio: <input type="text" name="price" value="${data.price}"> ${data.getError("price")}<br>
     <input type="submit" value="Guardar"><p>
     
-        <a href="<c:url value="/product/" />">Cancelar</a>
+        <a href="<c:url value="/rest/product/" />">Cancelar</a>
 </form>
 </div>
 

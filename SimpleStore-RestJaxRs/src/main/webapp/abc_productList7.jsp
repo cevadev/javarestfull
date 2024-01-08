@@ -20,8 +20,8 @@
     <td>${pd.name}</td>
     <td>${pd.description}</td>
     <td align="right">${pd.price}</td>
-    <td><a href="<c:url value="/product/${pd.primaryKey}"/>">[Ed]</a>
-        <a href="<c:url value="/product/${pd.primaryKey}?action=del"/>">[X]</a></td>
+    <td><a href="<c:url value="/rest/product/${pd.primaryKey}"/>">[Ed]</a>
+        <a href="<c:url value="/rest/product/${pd.primaryKey}?action=del"/>">[X]</a></td>
 </tr>
 </c:forEach>
 </table>
